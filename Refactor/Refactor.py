@@ -64,21 +64,35 @@ for i in range(length):
     print('i: ', i)
     print(*matches[i], sep=' ')
 
+dups = []
+
 # Check the array.
-# for each i, search for consecutive numbers to find chunks of code
-# that have been copied.
+# for each i, 
 for i in range(length):
-    dups = []
     num_matches = len(matches[i])
 
     # Don't bother with lines that have only one match because that line
     # only matches itself.
     if num_matches > 1:
+        print( *matches[i] )
+        line = []
+        line.append(i)
         #dups.append( [3, 4, 5] )
         for j in range(1, num_matches):
-            match = matches[i][j]
-            matches[match] = [match]
+            offset = matches[i][j] - i
+            print(offset)
+            line.append(offset)
         # End for j
+        dups.append(line)
     # End if
 # End for i
 
+print('.')
+print('.')
+print('.')
+
+length = len(dups)
+# Print the array.
+for i in range(length):
+    #print('i: ', i)
+    print(*dups[i], sep=' ')
