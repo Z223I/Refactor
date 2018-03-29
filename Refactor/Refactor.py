@@ -1,9 +1,9 @@
 #!usr/bin/python3
 
 import sys
-#
-#
-#
+#1
+#2
+#3
 
 # Ask for file if not on the command line
 if len(sys.argv) < 2:
@@ -17,9 +17,9 @@ with open(filename, "r") as fo:
     lines = fo.readlines()
 
 lines = [x.strip() for x in lines]
-#
-#
-#
+#1
+#2
+#3
 
 length = len(lines)
 
@@ -29,9 +29,9 @@ print(*lines, sep='\n')
 
 # Setup 2 dimensional array
 matches = [[] for i in range(length)]
-#
-#
-#
+#1
+#2
+#3
 
 # Build array.
 for i in range(length):
