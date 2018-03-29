@@ -46,6 +46,7 @@ for i in range(length):
 # Check the array.
 # for each i with matching lines, delete the matching lines.
 for i in range(length):
+
     num_matches = len(matches[i])
 
     # Don't bother with lines that have only one match because that line
@@ -58,11 +59,26 @@ for i in range(length):
     # End if
 # End for i
 
-# Check the array.
-# for each i, search for consecutive numbers to find chunks of code
-# that have been copied.
+# Print the array.
 for i in range(length):
     print('i: ', i)
     print(*matches[i], sep=' ')
 
+# Check the array.
+# for each i, search for consecutive numbers to find chunks of code
+# that have been copied.
+for i in range(length):
+    dups = []
+    num_matches = len(matches[i])
+
+    # Don't bother with lines that have only one match because that line
+    # only matches itself.
+    if num_matches > 1:
+        #dups.append( [3, 4, 5] )
+        for j in range(1, num_matches):
+            match = matches[i][j]
+            matches[match] = [match]
+        # End for j
+    # End if
+# End for i
 
